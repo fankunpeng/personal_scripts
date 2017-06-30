@@ -7,7 +7,7 @@ import time
 home = '/home/fan/.github/fankunpeng.github.io/_posts/'
 #博客的markdown文档的存放文件夹
 editor = 'emacs '
-#默认编辑器，用于打开和编辑markdown文档, 注意后面留个空格 
+#默认编辑器，用于打开和编辑markdown文档, 注意后面留个空格
 
 parser = argparse.ArgumentParser(description='Process jekyll blog file')
 parser.add_argument('-l', '--list', action="store_true", help='list the blog title')
@@ -21,7 +21,7 @@ args =  parser.parse_args()
 
 if args.list:
     home_dir = os.listdir(home)
-    tit = re.compile(r'^([0-9]*)-([0-9]*)-([0-9]*)-(``.*)\.markdown')
+    tit = re.compile(r'^([0-9]*)-([0-9]*)-([0-9]*)-(.*)\.markdown')
     for filename in home_dir:
         u = tit.match(filename)
         print(u.group(4))
