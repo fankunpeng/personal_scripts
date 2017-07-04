@@ -23,8 +23,9 @@ if args.list:
     home_dir = os.listdir(home)
     tit = re.compile(r'^([0-9]*)-([0-9]*)-([0-9]*)-(.*)\.markdown')
     for filename in home_dir:
-        u = tit.match(filename)
-        print(u.group(4))
+        if tit.match(filename):
+            u = tit.match(filename)
+            print(u.group(4))
 
 if args.add:
     now = time.strftime('%Y-%m-%d', time.localtime(time.time()))
